@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    background: darkblue;
+    color: white;
+
+}
+header > a
+{
+    color: white;
+    text-decoration: none;
+    margin: 0;
+    padding: 10px;
+
+
+}
+
+
