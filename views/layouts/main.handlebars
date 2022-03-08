@@ -10,9 +10,24 @@
 </head>
 <body>
 <header>
-<a href="/"><div>Home</div></a>
-<div>&nbsp;</div>
-<a href="/login"><div>Login</div></a>
+    
+    <div class= "title">Home</div>
+    {{#unless account}}
+    <div>
+        <a href="/login"> Login</a>
+        <a href="/signUp">Sign Up</a> 
+    </div>
+    {{/unless}}
+         {{#if account}}
+    <div>
+        <div>
+            {{account}}
+        </div>
+        <a href="/logout">Log Out</a> 
+    </div>
+    {{/if}}
+        
+  
 
 </header>
 <div id=“Page”>

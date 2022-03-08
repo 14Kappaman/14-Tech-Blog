@@ -4,20 +4,22 @@ body {
 }
 
 header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    height: 50px;
+    display: flex;
     background: darkblue;
     color: white;
+    padding:  12px 24px;
+    justify-content: space-between;
+    align-items: center;
 
 }
-header > a
-{
+a {
     color: white;
     text-decoration: none;
-    margin: 0;
-    padding: 10px;
-
-
+    margin-left: 24px;
+}    
+.title {
+    font-size: 30px;
 }
 
 
