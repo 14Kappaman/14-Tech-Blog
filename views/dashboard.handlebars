@@ -1,14 +1,22 @@
-<h1>Dashboard</h1>
-<form action="/blog" method="post">
-<input type="text" name="title">
+
+<div class="block">
+
+<h2>Create Post</h2>
+<form action="/blog" method="post"><label for="">Title</label>
+<input type="text" name="title"> <label for="">Content</label>
 <textarea name="contents" id="blog_content" cols="30" rows="10"></textarea>
-<input type="submit" value="create">
-<input type="reset" value="reset">
+<input type="submit" value="Create">
+<input type="reset" value="Reset">
 </form>
+<h2>My Posts</h2>
 {{#each posts}}
-<div>
+<div class="post"> 
+   
     <h3>{{this.title}}</h3>
+     <h5>{{this.created_on}}</h5>
     <p>{{this.contents}}</p>
-    <h5>{{this.created_on}}</h5>
+    
 </div>
 {{/each}}
+</div> 
+    

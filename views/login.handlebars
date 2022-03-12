@@ -1,7 +1,9 @@
 
-<form action="/api/user/login" method="post">
+ 
+<div class="block">
+    <form action="/api/user/login" method="post">
     <div>
-        <label>name</label>
+        <label>Name</label>
         <input name="name" type="text"/>
     </div>
     <div>
@@ -12,11 +14,13 @@
         <label>Password</label>
         <input name="password" type="password"/>
     </div>
-    <input type="submit" value="submit"></input>
+    <br>
+    <input type="submit" value="Log In"></input>
 </form>
 
  {{#if err}}
 <div>
   {{err.message}}
 </div>
-{{/if}}       
+{{/if}}  
+</div>    

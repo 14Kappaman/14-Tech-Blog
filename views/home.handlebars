@@ -1,1 +1,13 @@
-<p>p Tag</p>This is the homepage.
+<div class="block">
+    <p>p Tag</p>This is the homepage.
+
+{{#each posts}}
+<div class="post"> 
+   
+    <h3>{{this.title}}</h3>
+     <h5>{{this.created_on}}</h5>
+    <p>{{this.contents}}</p>
+    
+</div>
+{{/each}}
+</div>

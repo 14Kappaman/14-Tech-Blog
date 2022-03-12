@@ -28,7 +28,7 @@ blogrouter.get("/", async (req, res) =>{
             raw:true
         }) 
         console.log(posts)
-        res.render("dashboard", {posts: posts})
+        res.render("dashboard", {posts: posts, account: req.session.name})
     }
    
 })

@@ -15,11 +15,105 @@ header {
 }
 a {
     color: white;
-    text-decoration: none;
+    text-decoration: none !important;
+
     margin-left: 24px;
 }    
 .title {
     font-size: 30px;
+    color: white;
+    text-decoration: none;
+
 }
+.nav {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+}
+.post{
+    background-color: aliceblue;
+padding: 10px;
+margin-bottom: 20px;
+}
+.post > h3 {
+    text-align: left;
+    color: rgb(0, 0, 255);
+}
+.post > h5 {
+    text-align: left;
+    font-size: 12px;
+}
+.block {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 
-
+} 
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+* {
+    box-sizing: border-box;
+  }
+  input[type="text"], input[type="number"], input[type="date"], input[type="password"], textarea {
+    width: 100% !important;
+    display: block;
+    box-sizing: border-box;
+    font-size: inherit;
+    padding: 5px;
+    background-color: #fdfbfb;
+    outline: none;
+    color: rgb(12, 12, 12);
+  }
+  
+  button, input[type="submit"], input[type="reset"], .Button {
+    background-color: #3009df;
+    text-align: center;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-size: inherit;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.1s background-color;
+  }
+  input[type="date"] {
+    text-align: center;
+  }
+  
+  input[type="reset"] {
+    background-color: #4a79be;
+  }
+  
+  button:hover, input[type="submit"]:hover, input[type="reset"]:hover, .Button:hover {
+    background-color: #2913ec;
+  }
+  
+  button:active, input[type="submit"]:active, input[type="reset"]:active, .Button:active {
+    background-color: #2a07f3;
+    font-weight: bold;
+  }
+  
+  button:focus, input[type="submit"]:focus, input[type="reset"]:focus, .Button:focus {
+    outline: white solid 1px;
+  }
+  .Row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .Row3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .Row4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  } 
+  label {
+      font-weight: bold;
+  }

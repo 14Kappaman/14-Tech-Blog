@@ -1,8 +1,13 @@
 const router = require("express").Router()
-
+const Post = require("../model/post");
 // in chrome, localhost:3000/
-router.get("/",(req,res)=>{
-    res.render("home",{account: req.session.name})
+router.get("/",async(req,res)=>{
+    let posts=await Post.findAll({
+       
+
+        raw:true
+    })
+    res.render("home",{account: req.session.name, posts: posts})
 })
 
 
@@ -10,10 +15,10 @@ router.get("/login",(req,res)=>{
     res.render("login")
 })
 router.get("/logout",(req,res)=>{
-    req.session.name=undefined    
-
-    req.session.userId = undefined;
-    req.session.loggedIn = false;
+    //req.session.name=undefined    
+    delete req.session
+    // req.session.userId = undefined;
+    // req.session.loggedIn = false;
     res.redirect("/")
 })
 router.get("/dashboard",(req,res)=>{

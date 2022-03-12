@@ -1,11 +1,12 @@
-<form class="row g-3" action="/api/user/create" method="post" autocomplete="on">
+<div class="block">
+  <form class="row g-3" action="/api/user/create" method="post" autocomplete="on">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Email</label>
     <input type="email" class="form-control" id="inputEmail4" name="email">
   </div>
 
    <div class="col-md-6">
-    <label for="inputname" class="form-label">name</label>
+    <label for="inputname" class="form-label">Name</label>
     <input type="text" class="form-control" id="inputname" name="name">
   </div>
 
@@ -53,3 +54,4 @@
   {{err.message}}
 </div>
 {{/if}}
+</div>
