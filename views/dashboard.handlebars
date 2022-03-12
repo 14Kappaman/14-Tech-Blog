@@ -5,3 +5,10 @@
 <input type="submit" value="create">
 <input type="reset" value="reset">
 </form>
+{{#each posts}}
+<div>
+    <h3>{{this.title}}</h3>
+    <p>{{this.contents}}</p>
+    <h5>{{this.created_on}}</h5>
+</div>
+{{/each}}
