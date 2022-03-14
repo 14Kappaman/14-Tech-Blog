@@ -32,9 +32,7 @@ router.post("/login",async (req,res)=>{
                 name: req.body.name
             }
         })
-        console.log(req.body.password)
-        console.log(user.password)
-        console.log(user.name)
+       
 if (user.checkPassword(req.body.password)){
     req.session.userId = user.id;
     req.session.name = user.name;
