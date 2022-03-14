@@ -15,10 +15,12 @@ router.get("/login",(req,res)=>{
     res.render("login")
 })
 router.get("/logout",(req,res)=>{
-    //req.session.name=undefined    
-    delete req.session
-    // req.session.userId = undefined;
-    // req.session.loggedIn = false;
+    req.session.name=null  
+    console.log("this happpened")
+    //delete req.session
+    //req.session=undefined
+     req.session.userId = null;
+     req.session.loggedIn = false;
     res.redirect("/")
 })
 router.get("/dashboard",(req,res)=>{

@@ -21,13 +21,22 @@
     </div>
     {{/unless}}
          {{#if account}}
-    <div class="Row3">
-        <a href="/blog"><DIV class="nav">Dashboard</DIV></a> 
-        <div class="nav">
-            {{account}}
+          <a href="/blog"><DIV class="nav">Dashboard</DIV></a> 
+    
+       
+        <form action="/logout" method="post">
+        
+        
+        </form>
+        <a href="/logout"><DIV style="text-align: center; color:white !important; display:grid; grid-template-rows:1fr 1fr">
+            <div>
+                <div>
+                    {{account}} 
+                </div>
+           
         </div>
-        <a href="/logout"><DIV class="nav">Logout</DIV></a> 
-    </div>
+            Logout</DIV></a> 
+
     {{/if}}
         
   
