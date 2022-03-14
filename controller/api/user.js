@@ -6,14 +6,18 @@ const { User } = require('../../model');
 router.post('/create', async (req, res) => {
     try{
         const newUser = await User.create(req.body);
-    
-        req.session.save(() => {
-           req.session.userId = newUser.id;
-            req.session.name = newUser.name;
-            req.session.loggedIn = true;
+        req.session.userId = newUser.id;
+        req.session.name = newUser.name;
+        req.session.loggedIn = true;
 
-            res.redirect('/');
-        })
+        res.redirect('/');
+        // req.session.save(() => {
+        //    req.session.userId = newUser.id;
+        //     req.session.name = newUser.name;
+        //     req.session.loggedIn = true;
+
+        //     res.redirect('/');
+        // })
 
     }catch(err){
         console.log(err);
@@ -24,10 +28,13 @@ router.post('/create', async (req, res) => {
 router.post("/login",async (req,res)=>{
     try {
         const user=await User.findOne({
-            name: req.body.name
+            where: {
+                name: req.body.name
+            }
         })
         console.log(req.body.password)
         console.log(user.password)
+        console.log(user.name)
 if (user.checkPassword(req.body.password)){
     req.session.userId = user.id;
     req.session.name = user.name;
