@@ -61,6 +61,11 @@ blogrouter.get("/:title", async(req, res) => {
         where: {
             blog_id: post.id
         },
+        include:{
+            model: User, 
+            required: true
+
+        },
         raw: true
     }) 
     console.log(comments)
@@ -76,10 +81,18 @@ blogrouter.get("/:title", async(req, res) => {
             }
         })).name,
         comments: comments
-    }
+    } 
+   
+comments.forEach(c => {
+    c.user = c["user.name"]
+   
+    c.date = new Date(Date.parse(c.created_on)).toLocaleString()
+});
+
     if (req.session.name){
         data.name=req.session.name
-    }
+    } 
+    console.log(comments)
     res.render("post", data)
 })
 

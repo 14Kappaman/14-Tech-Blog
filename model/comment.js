@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const User = require('./User');
 
 class Comment extends Model {
   
@@ -54,5 +55,5 @@ Comment.init(
     modelName: 'comment'
   }
 );
-
+Comment.belongsTo(User, {foreignKey: "creator_id"} )
 module.exports = Comment;
