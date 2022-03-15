@@ -4,8 +4,11 @@
 </h1>
 {{#each posts}}
 <div class="post"> 
+   <a href="/blog/{{this.title}}">
+   <h3>{{this.title}}</h3>
    
-    <h3>{{this.title}}</h3>
+   </a>
+   
      <h5>{{this.created_on}}</h5>
     <p>{{this.contents}}</p>
     

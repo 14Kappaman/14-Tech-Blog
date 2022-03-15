@@ -1,0 +1,29 @@
+<div class="post"> 
+   
+    <h3>{{title}}</h3>
+     <h5>{{created_on}}</h5>
+    <p>{{contents}}</p>
+    <div>
+        {{user}}
+    </div>
+</div>
+{{#if name }}
+<form action="/blog/{{title}}" method="post">
+<textarea name="contents" id="contents" cols="30" rows="10"></textarea><input type="submit" value="Add comment.">
+
+
+</form>
+{{else}}
+<div>
+
+Please log in to add comments.
+
+</div>
+{{/if}}
+{{#each comments}}
+<div>
+    <p>
+        {{this.contents}}
+    </p>
+</div>
+{{/each}}
