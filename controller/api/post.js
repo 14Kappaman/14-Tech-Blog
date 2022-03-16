@@ -97,6 +97,7 @@ comments.forEach(c => {
 })
 
 
+
 blogrouter.post("/", async (req, res) =>{
     const userId=(await User.findOne({
         where: {
