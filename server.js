@@ -18,7 +18,10 @@ const sess = {
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize
-  })
+  }),
+  cookie: {
+    maxAge: 1000 * 60 * 60 //1 hour
+  }
 };
 
 app.use(session(sess));
