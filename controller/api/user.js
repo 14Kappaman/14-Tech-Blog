@@ -6,18 +6,18 @@ const { User } = require('../../model');
 router.post('/create', async (req, res) => {
     try{
         const newUser = await User.create(req.body);
-        req.session.userId = newUser.id;
-        req.session.name = newUser.name;
+       req.session.userId = newUser.id;
+       req.session.name = newUser.name;
         req.session.loggedIn = true;
 
-        res.redirect('/');
-        // req.session.save(() => {
+        // res.redirect('/');
+         req.session.save(() => {
         //    req.session.userId = newUser.id;
         //     req.session.name = newUser.name;
         //     req.session.loggedIn = true;
 
-        //     res.redirect('/');
-        // })
+            res.redirect('/');
+        })
 
     }catch(err){
         console.log(err);
@@ -38,7 +38,10 @@ if (user.checkPassword(req.body.password)){
     req.session.name = user.name;
     req.session.loggedIn = true;
 
-    res.redirect('/');
+    req.session.save(() => {
+        res.redirect('/');
+    })
+    
 } else {
     throw new Error("Incorrect Username or Password")
 }

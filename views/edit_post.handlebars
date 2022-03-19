@@ -1,0 +1,6 @@
+_<form action="/blog/update" method="post"><label for="">Title</label>
+<input type="text" value="{{title}}" name="title"> <label for="">Content</label>
+<textarea name="contents" id="blog_content" cols="30" rows="10">{{content}}</textarea>
+<input type="submit" value="Create">
+<input type="hidden" name="oldtitle" value="{{title}}">
+</form>

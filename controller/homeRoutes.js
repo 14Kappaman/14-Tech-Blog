@@ -21,6 +21,9 @@ router.get("/logout",(req,res)=>{
     //req.session=undefined
      req.session.userId = null;
      req.session.loggedIn = false;
+     req.session.destroy();
+     req.session = null;
+
     res.redirect("/")
 })
 router.get("/dashboard",(req,res)=>{

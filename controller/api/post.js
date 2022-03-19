@@ -2,7 +2,9 @@ const { Router } = require("express");
 
 const { User } = require("../../model");
 const Post = require("../../model/post");
-const Comment = require("../../model/comment")
+const Comment = require("../../model/comment");
+const res = require("express/lib/response");
+const { post } = require("../homeRoutes");
 
 const blogrouter=Router()
 
@@ -95,8 +97,33 @@ comments.forEach(c => {
     console.log(comments)
     res.render("post", data)
 })
-
-
+blogrouter.get("/update/:title", async (req,res)=>{
+    let post = await Post.findOne({
+        where:{
+            title:req.params.title,
+            creator_id: req.session.userId
+        }
+    })
+    res.render("edit_post", {
+        title:post.title,
+        content: post.contents,
+name: req.session.userId
+    }
+        
+    
+    )
+})
+blogrouter.post("/update", async (req,res)=>{
+    await Post.update({
+        title: req.body.title,
+        contents: req.body.content,
+        where: {
+            title: req.body.oldtitle, 
+            creator_id: req.session.userId
+        }
+    })
+    res.redirect("/blog")
+})
 
 blogrouter.post("/", async (req, res) =>{
     const userId=(await User.findOne({
